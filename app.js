@@ -1,8 +1,6 @@
-// app.js
-
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, push } from 'firebase/database';
-import firebaseConfig from './firebase-config'; // Import your Firebase configuration
+import { initializeApp } from './node_modules/firebase/app/dist/index.esm2017.js';
+import { getDatabase, ref, push } from './node_modules/firebase/database/dist/index.esm2017.js';
+import firebaseConfig from './firebase-config.js'; // Import your Firebase configuration
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
