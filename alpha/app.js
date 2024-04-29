@@ -24,7 +24,7 @@ emailForm.addEventListener('submit', (e) => {
     push(emailRef, email)
         .then(() => {
             console.log('Email stored successfully:', email);   
-            firebase.analytics().logEvent('email_submitted');
+            firebase.analytics().logEvent('sign_up');
         })
         .catch((error) => {
             console.error('Error storing email:', error);
