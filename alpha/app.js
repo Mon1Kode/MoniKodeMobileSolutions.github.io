@@ -2,6 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.1/firebase-app.js";
 import { getDatabase, ref, push } from 'https://www.gstatic.com/firebasejs/10.11.1/firebase-database.js"';
+import {firebase} from "googleapis/build/src/apis/firebase"; // Import your Firebase configuration
 import firebaseConfig from './firebase-config.js'; // Import your Firebase configuration
 
 // Initialize Firebase
@@ -22,7 +23,8 @@ emailForm.addEventListener('submit', (e) => {
     // Store the email in the database
     push(emailRef, email)
         .then(() => {
-            console.log('Email stored successfully:', email);
+            console.log('Email stored successfully:', email);   
+            firebase.analytics().logEvent('email_submitted');
         })
         .catch((error) => {
             console.error('Error storing email:', error);
