@@ -33,8 +33,11 @@ emailForm.addEventListener('submit', (e) => {
 });
 
 async function addEmailToTesting(email) {
+    // Parse the credentials from the environment variable
+    const credentials = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS_JSON);
+
     const auth = new google.auth.GoogleAuth({
-        keyFile: 'la-passerelle-220fa-firebase-adminsdk-7xyan-347fbbf23e.json',
+        credentials: credentials,
         scopes: ['https://www.googleapis.com/auth/androidpublisher'],
     });
 
