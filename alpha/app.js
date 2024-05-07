@@ -48,7 +48,7 @@ async function addEmailToTesting(email) {
 
     try {
         const response = await androidPublisher.edits.testers.update({
-            packageName: 'your.package.name',
+            packageName: 'com.monikode.la_passerelle',
             track: 'alpha', // or 'alpha', 'beta', depending on your testing track
             requestBody: {
                 testers: {
