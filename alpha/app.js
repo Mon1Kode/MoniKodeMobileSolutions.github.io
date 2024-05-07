@@ -24,9 +24,39 @@ emailForm.addEventListener('submit', (e) => {
     push(emailRef, email)
         .then(() => {
             console.log('Email stored successfully:', email);   
-            firebase.analytics().logEvent('sign_up');
+            firebase.analytics().logEvent('email_submitted');
+            addEmailToTesting(email)
         })
         .catch((error) => {
             console.error('Error storing email:', error);
         });
 });
+
+async function addEmailToTesting(email) {
+    const auth = new google.auth.GoogleAuth({
+        keyFile: 'la-passerelle-220fa-firebase-adminsdk-7xyan-347fbbf23e.json',
+        scopes: ['https://www.googleapis.com/auth/androidpublisher'],
+    });
+
+    const androidPublisher = google.androidpublisher({
+        version: 'v3',
+        auth
+    });
+
+    try {
+        const response = await androidPublisher.edits.testers.update({
+            packageName: 'your.package.name',
+            track: 'alpha', // or 'alpha', 'beta', depending on your testing track
+            requestBody: {
+                testers: {
+                    googleGroups: [],
+                    googlePlusCommunities: [],
+                    emails: [email] // Array of emails to add
+                }
+            }
+        });
+        console.log('Email added to testing track:', response.data);
+    } catch (error) {
+        console.error('Failed to add email:', error);
+    }
+}
