@@ -30,21 +30,28 @@
     }
 }
 
+@font-face {
+    font-family: 'Travelling';
+    src: url('assets/fonts/Travelling.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Travelling', Helvetica;
 }
 
 body, html {
     height: 100%;
-    font-family: Arial, sans-serif;
     color: #fff;
     background-color: #000;
 }
 
 .container {
-    background-image: url('assets/background.png');
+    background-image: url('assets/images/background.png');
     background-size: cover;
     background-position: center;
     height: 90vh;
@@ -94,6 +101,7 @@ header {
     border-radius: 3px;
     margin: 0 20px;
     animation: bounceIn 1.5s ease-in-out;
+    font-size: 1.6em;
 }
 
 .content {
@@ -109,34 +117,9 @@ header {
 }
 
 .content p {
-    font-size: 1.5em;
+    font-size: 1.8em;
     margin-bottom: 20px;
     animation: slideIn 1.5s ease-in-out;
-}
-
-.cta {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.cta input[type="email"] {
-    padding: 10px;
-    font-size: 1em;
-    border: none;
-    border-radius: 3px 0 0 3px;
-    width: 250px;
-}
-
-.cta button {
-    padding: 10px 20px;
-    font-size: 1em;
-    background-color: #197BDF;
-    color: #fff;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    cursor: pointer;
-    font-weight: bold;
 }
 
 .reasons-container {
@@ -171,12 +154,12 @@ header {
 }
 
 .card h3 {
-    font-size: 1.2em;
+    font-size: 1.6em;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 0.9em;
+    font-size: 1.2em;
     margin-bottom: 20px;
 }
 
@@ -205,6 +188,7 @@ header {
     cursor: pointer;
     outline: none;
     font-weight: bold;
+    font-size: 1.6em;
 }
 
 .language-selector select option {
@@ -219,7 +203,7 @@ header {
 }
 
 .language-selector select::-ms-expand {
-    display: none; /* Hide the default dropdown arrow in IE */
+    display: none
 }
 
 .language-selector::after {
