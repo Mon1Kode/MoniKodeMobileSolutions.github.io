@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FestPocket</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/festpocket-logo-2.png">
 </head>
+
 <body>
     <div class="container">
         <header>
-            <img src="assets/images/festpocket-logo.png" alt="Logo" class="logo">
+            <img src="assets/images/festpocket-logo-2.png" alt="Logo" class="logo">
             <div class="language-selector">
                 <select id="language-dropdown" onchange="changeLanguage()">
                     <option value="en" selected>English</option>
@@ -30,19 +33,19 @@
         <h2>More reasons to download FestPocket</h2>
         <div class="cards">
             <div class="card">
-                <h3>Plan your next festivals</h3>
-                <p>Keep track of your favourite festivals and get notified when they are happening.</p>
-                <img src="assets/images/calendar-icon.png" alt="Calendar Icon">
+                <h3>User-Friendly Interface</h3>
+                <p>Intuitive design makes it easy to manage your festivals and budgets.</p>
+                <img src="assets/images/ui-icon.png" alt="Calendar Icon">
             </div>
             <div class="card">
-                <h3>Save your budget</h3>
-                <p>Keep track of your budget and get notified when you are spending too much.</p>
-                <img src="assets/images/budget-icon.png" alt="Budget Icon">
+                <h3>Comprehensive Tracking</h3>
+                <p>Keep all your festival details in one place and get a clear overview of your spending.</p>
+                <img src="assets/images/tracking-icon.png" alt="Budget Icon">
             </div>
             <div class="card">
-                <h3>Get the best deals</h3>
-                <p>Get notified when there are deals on your favourite festivals.</p>
-                <img src="assets/images/deal-icon.png" alt="Deal Icon">
+                <h3>Stay Organized</h3>
+                <p>Never miss a festival or go over budget again with FestPocket.</p>
+                <img src="assets/images/organized-icon.png" alt="Deal Icon">
             </div>
         </div>
     </div>
@@ -51,38 +54,38 @@
             en: {
                 title: "Your festival, your budget, your pocket",
                 subtitle: "Download FestPocket now",
-                reasonTitle: "More reasons to join",
-                card1Title: "Plan your next festivals",
-                card1Text: "Keep track of your favourite festivals and get notified when they are happening.",
-                card2Title: "Save your budget",
-                card2Text: "Keep track of your budget and get notified when you are spending too much.",
-                card3Title: "Get the best deals",
-                card3Text: "Get notified when there are deals on your favourite festivals.",
+                reasonTitle: "More reasons to download FestPocket",
+                card1Title: "User-Friendly Interface",
+                card1Text: "Intuitive design makes it easy to manage your festivals and budgets.",
+                card2Title: "Comprehensive Tracking",
+                card2Text: "Keep all your festival details in one place and get a clear overview of your spending.",
+                card3Title: "Stay Organized",
+                card3Text: "Never miss a festival or go over budget again with FestPocket.",
                 download: "Download"
             },
             nl: {
-                title: "Jouw festival, jouw budget, jouw zak",
+                title: "Uw festival, uw budget, uw portemonnee",
                 subtitle: "Download FestPocket nu",
-                reasonTitle: "Meer redenen om lid te worden",
-                card1Title: "Plan je volgende festivals",
-                card1Text: "Houd je favoriete festivals bij en krijg een melding wanneer ze plaatsvinden.",
-                card2Title: "Bespaar je budget",
-                card2Text: "Houd je budget bij en krijg een melding wanneer je te veel uitgeeft.",
-                card3Title: "Krijg de beste deals",
-                card3Text: "Ontvang meldingen wanneer er deals zijn voor je favoriete festivals.",
-                download: "Download"
+                reasonTitle: "Meer redenen om FestPocket te downloaden",
+                card1Title: "Gebruiksvriendelijke interface",
+                card1Text: "Intuïtief ontwerp maakt het eenvoudig om uw festivals en budgetten te beheren.",
+                card2Title: "Uitgebreide tracking",
+                card2Text: "Bewaar al uw festivalgegevens op één plek en krijg een duidelijk overzicht van uw uitgaven.",
+                card3Title: "Blijf georganiseerd",
+                card3Text: "Mis nooit meer een festival of ga over uw budget heen met FestPocket.",
+                download: "Downloaden"
             },
             fr: {
                 title: "Votre festival, votre budget, votre poche",
-                subtitle: "Téléchargez FestPocket maintenant",
-                reasonTitle: "Plus de raisons de nous rejoindre",
-                card1Title: "Planifiez vos prochains festivals",
-                card1Text: "Suivez vos festivals préférés et recevez des notifications lorsqu'ils ont lieu.",
-                card2Title: "Économisez votre budget",
-                card2Text: "Gardez une trace de votre budget et recevez une alerte lorsque vous dépensez trop.",
-                card3Title: "Obtenez les meilleures offres",
-                card3Text: "Soyez averti lorsque des offres sont disponibles pour vos festivals préférés.",
-                download: "Télécharger"
+                subtitle: "Telechargez FestPocket maintenant",
+                reasonTitle: "Plus de raisons de telecharger FestPocket",
+                card1Title: "Interface conviviale",
+                card1Text: "La conception intuitive facilite la gestion de vos festivals et de vos budgets.",
+                card2Title: "Suivi complet",
+                card2Text: "Conservez tous les details de votre festival en un seul endroit et obtenez un aperçu clair de vos depenses.",
+                card3Title: "Restez organise",
+                card3Text: "Ne manquez plus jamais un festival ou ne dépassez plus votre budget avec FestPocket.",
+                download: "Télécharger",
             }
         };
 
@@ -101,7 +104,7 @@
             document.querySelectorAll(".card p")[2].textContent = translation.card3Text;
             document.querySelector(".sign-in").textContent = translation.download;
         }
-            // Function to open the modal
+        // Function to open the modal
         function openModal() {
             document.getElementById("downloadModal").style.display = "flex";
         }
@@ -112,7 +115,7 @@
         }
 
         // Close the modal when clicking outside of it
-        window.onclick = function(event) {
+        window.onclick = function (event) {
             const modal = document.getElementById("downloadModal");
             if (event.target === modal) {
                 modal.style.display = "none";
@@ -120,6 +123,7 @@
         }
     </script>
 </body>
+
 </html>
 
 <div id="downloadModal" class="modal">
