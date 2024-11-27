@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Passerelle</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/logo.png">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <img src="assets/images/logo.png" alt="Logo" class="logo">
+            <!-- <div class="language-selector">
+                <select id="language-dropdown" onchange="changeLanguage()">
+                    <option value="fr" selected>Français</option>
+                    <option value="en">English</option>
+                    <option value="nl">Nederlands</option>
+                </select>
+            </div> -->
+            <button class="sign-in" onclick="openModal()">Téléchargez</button>
+        </header>
+
+        <div class="content">
+            <h1>Des activités,</h1><h1>Des ressources,</h1><h1>Des outils</h1>
+            <p>Avec La Passerelle :</p><p>Préparez-vous, Renseignez-vous et Comprenez-vous</p>
+        </div>
+    </div>
+    <div class="reasons-container">
+        <h2>Pourquoi rejoindre La Passerelle ?</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>Différentes activités</h3>
+                <p>Les activités sont organisées pour doter les participants de compétences essentielles à leur bien-être.</p>
+                <img src="assets/images/activities.png" alt="Activities Icon">
+            </div>
+            <div class="card">
+                <h3>Différentes ressources</h3>
+                <p>Consultez de nombreux livres, sites concernant les différentes pathologies.</p>
+                <img src="assets/images/ressources.png" alt="Ressources Icon">
+            </div>
+            <div class="card">
+                <h3>Différents outils</h3>
+                <p>Organisez et préparez vos rendez-vous grâce à la liste de ToDo ainsi qu'au calendrier personnalisable.</p>
+                <img src="assets/images/tools.png" alt="Tools Icon">
+            </div>
+        </div>
+    </div>
+    <script>
+        const translations = {
+            en: {
+                title: "Your festival, your budget, your pocket",
+                subtitle: "Download FestPocket now",
+                reasonTitle: "More reasons to download FestPocket",
+                card1Title: "User-Friendly Interface",
+                card1Text: "Intuitive design makes it easy to manage your festivals and budgets.",
+                card2Title: "Comprehensive Tracking",
+                card2Text: "Keep all your festival details in one place and get a clear overview of your spending.",
+                card3Title: "Stay Organized",
+                card3Text: "Never miss a festival or go over budget again with FestPocket.",
+                download: "Download"
+            },
+            nl: {
+                title: "Uw festival, uw budget, uw portemonnee",
+                subtitle: "Download FestPocket nu",
+                reasonTitle: "Meer redenen om FestPocket te downloaden",
+                card1Title: "Gebruiksvriendelijke interface",
+                card1Text: "Intuïtief ontwerp maakt het eenvoudig om uw festivals en budgetten te beheren.",
+                card2Title: "Uitgebreide tracking",
+                card2Text: "Bewaar al uw festivalgegevens op één plek en krijg een duidelijk overzicht van uw uitgaven.",
+                card3Title: "Blijf georganiseerd",
+                card3Text: "Mis nooit meer een festival of ga over uw budget heen met FestPocket.",
+                download: "Downloaden"
+            },
+            fr: {
+                title: "Votre festival, votre budget, votre poche",
+                subtitle: "Telechargez FestPocket maintenant",
+                reasonTitle: "Plus de raisons de telecharger FestPocket",
+                card1Title: "Interface conviviale",
+                card1Text: "La conception intuitive facilite la gestion de vos festivals et de vos budgets.",
+                card2Title: "Suivi complet",
+                card2Text: "Conservez tous les details de votre festival en un seul endroit et obtenez un aperçu clair de vos depenses.",
+                card3Title: "Restez organise",
+                card3Text: "Ne manquez plus jamais un festival ou ne dépassez plus votre budget avec FestPocket.",
+                download: "Télécharger",
+            }
+        };
+
+        function changeLanguage() {
+            const language = document.getElementById("language-dropdown").value;
+            const translation = translations[language];
+
+            document.querySelector("h1").textContent = translation.title;
+            document.querySelector(".content p").textContent = translation.subtitle;
+            document.querySelector(".reasons-container h2").textContent = translation.reasonTitle;
+            document.querySelectorAll(".card h3")[0].textContent = translation.card1Title;
+            document.querySelectorAll(".card p")[0].textContent = translation.card1Text;
+            document.querySelectorAll(".card h3")[1].textContent = translation.card2Title;
+            document.querySelectorAll(".card p")[1].textContent = translation.card2Text;
+            document.querySelectorAll(".card h3")[2].textContent = translation.card3Title;
+            document.querySelectorAll(".card p")[2].textContent = translation.card3Text;
+            document.querySelector(".sign-in").textContent = translation.download;
+        }
+        // Function to open the modal
+        function openModal() {
+            document.getElementById("downloadModal").style.display = "flex";
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            document.getElementById("downloadModal").style.display = "none";
+        }
+
+        // Close the modal when clicking outside of it
+        window.onclick = function (event) {
+            const modal = document.getElementById("downloadModal");
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+
+</html>
+
+<div id="downloadModal" class="modal">
+    <div class="modal-content">
+        <h2>Téléchargez La Passerelle</h2>
+        <p>Rendez-vous sur l'Apple Store pour télécharger La Passerelle</p>
+        <div class="store-buttons">
+            <a href="https://apps.apple.com/us/app/la-passerelle-draw-your-fight/id6502902535" target="_blank" class="store-button apple">Apple Store</a>
+        </div>
+    </div>
+</div>
