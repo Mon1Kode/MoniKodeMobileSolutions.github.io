@@ -32,7 +32,7 @@
 
 @font-face {
     font-family: 'Travelling';
-    src: url('assets/fonts/Travelling.ttf') format('truetype');
+    src: url('assets/fonts/Orbitron-VariableFont_wght.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -81,10 +81,84 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 40px);
     padding: 0 20px;
     z-index: 2;
     animation: slideIn 500ms ease-in-out;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    header {
+        align-items: center;
+        top: 10px;
+        left: 10px;
+        padding: auto;
+        width: calc(100% - 10px);
+        justify-content: space-between;
+    }
+
+    .logo {
+        height: 70px;
+    }
+
+    .sign-in {
+        width: 150px;
+        font-size: small;
+        margin: auto;
+    }
+
+    .language-selector select {
+        font-size: small;
+        padding: 10px 20px;
+        margin-left: 10px;
+        width: 120px;
+        margin-left: 20px;
+    }
+
+    .content {
+        margin-top: 100px;
+    }
+}
+
+/* Media query for very small screens like iPhone SE */
+@media (max-width: 375px) {
+    header {
+        top: 5px;
+        left: 5px;
+        width: calc(100% - 10px);
+        padding: 5px 5px;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .logo {
+        height: 60px;
+    }
+
+    .sign-in {
+        font-size: small;
+        padding: 8px 15px;
+        width: auto;
+    }
+
+    .language-selector select {
+        font-size: small;
+        padding: 5px 8px;
+        margin-left: 5px;
+    }
+
+    .content {
+        margin-top: 190px;
+    }
+
+    .content h1 {
+        font-size: 2em;
+    }
+
+    .content p {
+        font-size: 1em;
+    }
 }
 
 .logo {
@@ -101,7 +175,7 @@ header {
     border-radius: 3px;
     margin: 0 20px;
     animation: bounceIn 1.5s ease-in-out;
-    font-size: 1.6em;
+    font-size: auto;
 }
 
 .content {
@@ -145,7 +219,7 @@ header {
     background: linear-gradient(135deg, #1b1b2f, #27273e);
     border-radius: 15px;
     padding: 20px;
-    width: 200px;
+    width: 300px;
     text-align: left;
     color: #fff;
     position: relative;
@@ -188,7 +262,7 @@ header {
     cursor: pointer;
     outline: none;
     font-weight: bold;
-    font-size: 1.6em;
+    font-size: auto;
 }
 
 .language-selector select option {
