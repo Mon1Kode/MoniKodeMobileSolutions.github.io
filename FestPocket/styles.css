@@ -355,3 +355,30 @@ header {
 .store-button:hover {
     opacity: 0.9;
 }
+
+.instagram-section {
+    text-align: center;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.instagram-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.instagram-section a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.instagram-section a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
